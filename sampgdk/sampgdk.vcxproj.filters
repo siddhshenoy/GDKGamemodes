@@ -15,16 +15,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GDKGamemodes.cpp">
+    <ClCompile Include="sampgdk.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PluginExtras.cpp">
+    <ClCompile Include="amxplugin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Definitions\GDKGamemodes.def">
-      <Filter>Source Files</Filter>
-    </None>
+    <ClInclude Include="sampgdk.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="plugincommon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="plugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="amx\amx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="amx\getch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="amx\sclinux.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

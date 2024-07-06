@@ -21,13 +21,13 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ccfec5e7-351c-4d35-b475-394f0dc4f768}</ProjectGuid>
-    <RootNamespace>GDKGamemodes</RootNamespace>
+    <ProjectGuid>{2bedcd1a-a9dc-4396-9ea3-08ed5d35ab88}</ProjectGuid>
+    <RootNamespace>sampgdk</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -76,13 +76,10 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)sampgdk;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ModuleDefinitionFile>$(ProjectDir)Definitions\GDKGamemodes.def</ModuleDefinitionFile>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -91,18 +88,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;SAMPGDK_EXPORT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)sampgdk;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ModuleDefinitionFile>$(ProjectDir)Definitions\GDKGamemodes.def</ModuleDefinitionFile>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration);</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sampgdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -134,16 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ProjectReference Include="..\sampgdk\sampgdk.vcxproj">
-      <Project>{2bedcd1a-a9dc-4396-9ea3-08ed5d35ab88}</Project>
-    </ProjectReference>
+    <ClCompile Include="amxplugin.cpp" />
+    <ClCompile Include="sampgdk.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GDKGamemodes.cpp" />
-    <ClCompile Include="PluginExtras.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Definitions\GDKGamemodes.def" />
+    <ClInclude Include="amx\amx.h" />
+    <ClInclude Include="amx\getch.h" />
+    <ClInclude Include="amx\sclinux.h" />
+    <ClInclude Include="plugin.h" />
+    <ClInclude Include="plugincommon.h" />
+    <ClInclude Include="sampgdk.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

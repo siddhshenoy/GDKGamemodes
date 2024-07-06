@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GDKGamemodes", "GDKGamemodes\GDKGamemodes.vcxproj", "{CCFEC5E7-351C-4D35-B475-394F0DC4F768}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sampgdk", "sampgdk\sampgdk.vcxproj", "{2BEDCD1A-A9DC-4396-9EA3-08ED5D35AB88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{CCFEC5E7-351C-4D35-B475-394F0DC4F768}.Release|x64.Build.0 = Release|x64
 		{CCFEC5E7-351C-4D35-B475-394F0DC4F768}.Release|x86.ActiveCfg = Release|Win32
 		{CCFEC5E7-351C-4D35-B475-394F0DC4F768}.Release|x86.Build.0 = Release|Win32
+		{2BEDCD1A-A9DC-4396-9EA3-08ED5D35AB88}.Debug|x64.ActiveCfg = Debug|x64
+		{2BEDCD1A-A9DC-4396-9EA3-08ED5D35AB88}.Debug|x64.Build.0 = Debug|x64
+		{2BEDCD1A-A9DC-4396-9EA3-08ED5D35AB88}.Debug|x86.ActiveCfg = Debug|Win32
+		{2BEDCD1A-A9DC-4396-9EA3-08ED5D35AB88}.Debug|x86.Build.0 = Debug|Win32
+		{2BEDCD1A-A9DC-4396-9EA3-08ED5D35AB88}.Release|x64.ActiveCfg = Release|x64
+		{2BEDCD1A-A9DC-4396-9EA3-08ED5D35AB88}.Release|x64.Build.0 = Release|x64
+		{2BEDCD1A-A9DC-4396-9EA3-08ED5D35AB88}.Release|x86.ActiveCfg = Release|Win32
+		{2BEDCD1A-A9DC-4396-9EA3-08ED5D35AB88}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
