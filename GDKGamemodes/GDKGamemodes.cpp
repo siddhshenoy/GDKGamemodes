@@ -3,6 +3,8 @@
 
 #include <sampgdk.h>
 
+#include <SanAndreasRoleplay/Gamemode.h>
+
 
 PLUGIN_EXPORT bool PLUGIN_CALL OnActorStreamIn(int actorid, int forplayerid) {
     return true;
@@ -20,8 +22,9 @@ PLUGIN_EXPORT bool PLUGIN_CALL OnGameModeExit() {
     return true;
 }
 PLUGIN_EXPORT bool PLUGIN_CALL OnGameModeInit() {
+    IGamemode::SetApiGamemode();
     sampgdk::logprintf("GDK Gamemodes loaded...");
-    return true;
+    return IGamemode::GetGamemode()->OnGameModeInit();
 }
 PLUGIN_EXPORT bool PLUGIN_CALL OnIncomingConnection(int playerid, const char* ip_address, int port) {
     return true;
