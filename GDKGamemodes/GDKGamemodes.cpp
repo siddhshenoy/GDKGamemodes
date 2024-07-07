@@ -2,9 +2,10 @@
 #include <string.h>
 
 #include <sampgdk.h>
+#include <GMAPI/GMAPI/CPoolManager.h>
+#include <GMAPI/GMAPI/CPlayer.h>
 
 #include <SanAndreasRoleplay/Gamemode.h>
-
 
 PLUGIN_EXPORT bool PLUGIN_CALL OnActorStreamIn(int actorid, int forplayerid) {
     return true;
@@ -45,16 +46,23 @@ PLUGIN_EXPORT bool PLUGIN_CALL OnPlayerClickTextDraw(int playerid, int clickedid
     return true;
 }
 PLUGIN_EXPORT bool PLUGIN_CALL OnPlayerCommandText(int playerid, const char* cmdtext) {
-    return false;
+    return IGamemode::GetGamemode()->OnPlayerCommandText(playerid, cmdtext);
 }
 PLUGIN_EXPORT bool PLUGIN_CALL OnPlayerConnect(int playerid) {
-    return true;
+    //Intiailize the CPlayer memory for player
+    CPlayer* PlayerPtr = new CPlayer(playerid);
+    return IGamemode::GetGamemode()->OnPlayerConnect(playerid);
 }
 PLUGIN_EXPORT bool PLUGIN_CALL OnPlayerDeath(int playerid, int killerid, int reason) {
     return true;
 }
 PLUGIN_EXPORT bool PLUGIN_CALL OnPlayerDisconnect(int playerid, int reason) {
-    return true;
+    //Get the player pointer from memory
+    CPlayer* PlayerPtr = CPoolManager::GetInstance()->GetPlayerFromPool(playerid);
+    bool result = IGamemode::GetGamemode()->OnPlayerDisconnect(playerid, reason);
+    //Delete the structure in memory, internally causing it to be unallocated
+    delete PlayerPtr;
+    return result;
 }
 PLUGIN_EXPORT bool PLUGIN_CALL OnPlayerEditAttachedObject(int playerid, int response, int index, int modelid, int boneid, float fOffsetX, float fOffsetY, float fOffsetZ, float fRotX, float fRotY, float fRotZ, float fScaleX, float fScaleY, float fScaleZ) {
     return true;
