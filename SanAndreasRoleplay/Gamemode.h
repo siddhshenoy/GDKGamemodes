@@ -8,6 +8,9 @@ namespace SanAndreasRoleplay {
 	class Gamemode : public IGamemode
 	{
 	public:
+		Gamemode() {}
+		~Gamemode() {}
+	public:
 		bool OnActorStreamIn(int actorid, int forplayerid)
 		{
 			return true;
@@ -237,5 +240,6 @@ namespace SanAndreasRoleplay {
 		{
 			return true;
 		}
-	};
+
+};
 }
