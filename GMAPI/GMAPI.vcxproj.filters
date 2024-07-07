@@ -18,9 +18,15 @@
     <ClInclude Include="GMAPI\IGamemode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GMAPI\CEntity.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GMAPI\IGamemode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GMAPI\CEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

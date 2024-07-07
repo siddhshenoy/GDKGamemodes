@@ -128,9 +128,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="GMAPI\CEntity.h" />
     <ClInclude Include="GMAPI\IGamemode.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GMAPI\CEntity.cpp" />
     <ClCompile Include="GMAPI\IGamemode.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

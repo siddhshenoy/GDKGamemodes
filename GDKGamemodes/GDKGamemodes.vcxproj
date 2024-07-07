@@ -134,8 +134,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GMAPI\GMAPI.vcxproj">
+      <Project>{f4249270-a787-4335-84ec-d222a076bf20}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\sampgdk\sampgdk.vcxproj">
       <Project>{2bedcd1a-a9dc-4396-9ea3-08ed5d35ab88}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\SanAndreasRoleplay\SanAndreasRoleplay.vcxproj">
+      <Project>{73b72446-6e1c-4784-9b3c-f92841e1d75d}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
