@@ -128,10 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="GMAPI\CPoolManager.h" />
     <ClInclude Include="GMAPI\CEntity.h" />
     <ClInclude Include="GMAPI\IGamemode.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GMAPI\CPoolManager.cpp" />
     <ClCompile Include="GMAPI\CEntity.cpp" />
     <ClCompile Include="GMAPI\IGamemode.cpp" />
   </ItemGroup>
