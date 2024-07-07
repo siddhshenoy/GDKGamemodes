@@ -24,6 +24,9 @@
     <ClInclude Include="GMAPI\CPoolManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GMAPI\CPlayer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GMAPI\IGamemode.cpp">
@@ -33,6 +36,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GMAPI\CPoolManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GMAPI\CPlayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -2,6 +2,8 @@
 
 #include <GMAPI/GMAPI/IGamemode.h>
 
+#include <GMAPI/GMAPI/CPlayer.h>
+
 using namespace GMAPI;
 
 namespace SanAndreasRoleplay {
@@ -62,10 +64,47 @@ namespace SanAndreasRoleplay {
 		}
 		bool OnPlayerCommandText(int playerid, const char* cmdtext)
 		{
+			std::string sCmdText = std::string(cmdtext);
+			if (sCmdText == "/god") {
+				CPlayer* PlayerPtr = CPoolManager::GetInstance()->GetPlayerFromPool(playerid);
+				if (PlayerPtr != nullptr) {
+					PlayerPtr->SetHealth(999999999.0f);
+				}
+				return true;
+			}
+			if (sCmdText == "/heal") {
+				CPlayer* PlayerPtr = CPoolManager::GetInstance()->GetPlayerFromPool(playerid);
+				if (PlayerPtr != nullptr) {
+					PlayerPtr->SetHealth(100.0f);
+				}
+				return true;
+			}
+			if (sCmdText == "/kill") {
+				CPlayer* PlayerPtr = CPoolManager::GetInstance()->GetPlayerFromPool(playerid);
+				if (PlayerPtr != nullptr) {
+					PlayerPtr->SetHealth(0.0f);
+				}
+				return true;
+			}
+			if (sCmdText == "/givearmor") {
+				CPlayer* PlayerPtr = CPoolManager::GetInstance()->GetPlayerFromPool(playerid);
+				if (PlayerPtr != nullptr) {
+					PlayerPtr->SetArmour(100.0f);
+				}
+				return true;
+			}
+			if (sCmdText == "/removearmor") {
+				CPlayer* PlayerPtr = CPoolManager::GetInstance()->GetPlayerFromPool(playerid);
+				if (PlayerPtr != nullptr) {
+					PlayerPtr->SetArmour(0.0f);
+				}
+				return true;
+			}
 			return false;
 		}
 		bool OnPlayerConnect(int playerid)
 		{
+			CPoolManager::GetInstance()->GetPlayerFromPool(playerid)->Message(0x22AA22FF, "Welcome to the server");
 			return true;
 		}
 		bool OnPlayerDeath(int playerid, int killerid, int reason)
