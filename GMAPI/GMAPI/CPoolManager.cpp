@@ -14,10 +14,12 @@ CPoolManager* CPoolManager::GetInstance()
 
 CPoolManager::CPoolManager()
 {
+	DEBUG_FUNC_CLASS();
 }
 
 void CPoolManager::AddPlayerToPool(int playerid, CPlayer* playerptr)
 {
+	DEBUG_FUNC_CLASS();
 	if (this->PlayerPool.find(playerid) == this->PlayerPool.end()) {
 		this->PlayerPool.insert(
 			std::pair<int, CPlayer*>(playerid, playerptr)
@@ -27,11 +29,13 @@ void CPoolManager::AddPlayerToPool(int playerid, CPlayer* playerptr)
 
 CPlayer* CPoolManager::GetPlayerFromPool(int playerid)
 {
+	DEBUG_FUNC_CLASS();
 	return (this->IsPlayerInPool(playerid) ? this->PlayerPool[playerid] : nullptr);
 }
 
 void CPoolManager::RemovePlayerFromPool(int playerid)
 {
+	DEBUG_FUNC_CLASS();
 	if (this->PlayerPool.find(playerid) != this->PlayerPool.end()) {
 		this->PlayerPool.erase(playerid);
 	}
@@ -39,10 +43,12 @@ void CPoolManager::RemovePlayerFromPool(int playerid)
 
 bool CPoolManager::IsPlayerInPool(int playerid)
 {
+	DEBUG_FUNC_CLASS();
 	return (this->PlayerPool.find(playerid) != this->PlayerPool.end());
 }
 void CPoolManager::UnintializePlayerPool()
 {
+	DEBUG_FUNC_CLASS();
 	for (
 		std::map<int, CPlayer*>::const_iterator player_pool_it = this->PlayerPool.begin();
 		player_pool_it != this->PlayerPool.end();
@@ -55,5 +61,6 @@ void CPoolManager::UnintializePlayerPool()
 
 CPoolManager::~CPoolManager()
 {
+	DEBUG_FUNC_CLASS();
 	this->UnintializePlayerPool();
 }

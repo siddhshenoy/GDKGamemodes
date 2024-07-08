@@ -1,5 +1,7 @@
 #pragma once
 
+#include <GMAPI/GMAPI/Macros/DebuggingMacros.h>
+
 #include <string>
 
 class CEntity
