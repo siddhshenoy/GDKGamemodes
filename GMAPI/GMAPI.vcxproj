@@ -131,6 +131,7 @@
     <ClInclude Include="GMAPI\CPlayer.h" />
     <ClInclude Include="GMAPI\CPoolManager.h" />
     <ClInclude Include="GMAPI\CEntity.h" />
+    <ClInclude Include="GMAPI\Macros\DebuggingMacros.h" />
     <ClInclude Include="GMAPI\IGamemode.h" />
   </ItemGroup>
   <ItemGroup>

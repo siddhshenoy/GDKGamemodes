@@ -27,6 +27,9 @@
     <ClInclude Include="GMAPI\CPlayer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GMAPI\Macros\DebuggingMacros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GMAPI\IGamemode.cpp">
