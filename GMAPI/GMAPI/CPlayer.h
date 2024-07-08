@@ -6,7 +6,7 @@
 #define		RUNTIME_GETABLE_HEALTH
 
 #include <sampgdk/sampgdk.h>
-
+#include <GMAPI/GMAPI/Macros/DebuggingMacros.h>
 #include <GMAPI/GMAPI/CEntity.h>
 #include <GMAPI/GMAPI/CPoolManager.h>
 
