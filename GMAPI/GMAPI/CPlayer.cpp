@@ -39,6 +39,24 @@ float CPlayer::GetArmour()
 	return fArmour;
 }
 
+int CPlayer::GetVehicleSeat()
+{
+	DEBUG_FUNC_CLASS();
+	return GetPlayerVehicleSeat(this->EntityID);
+}
+
+void CPlayer::ToggleControllable(bool toggle)
+{
+	DEBUG_FUNC_CLASS();
+	TogglePlayerControllable(this->EntityID, toggle);
+}
+
+void CPlayer::RemoveFromVehicle()
+{
+	DEBUG_FUNC_CLASS();
+	RemovePlayerFromVehicle(this->EntityID);
+}
+
 int CPlayer::GetModel()
 {
 	DEBUG_FUNC_CLASS();
@@ -78,6 +96,30 @@ float CPlayer::GetHealth()
 	float fHealth;
 	GetPlayerHealth(this->EntityID, &fHealth);
 	return fHealth;
+}
+
+void CPlayer::SetInterior(int interior)
+{
+	DEBUG_FUNC_CLASS();
+	SetPlayerInterior(this->EntityID, interior);
+}
+
+int CPlayer::GetInterior()
+{
+	DEBUG_FUNC_CLASS();
+	return GetPlayerInterior(this->EntityID);
+}
+
+void CPlayer::SetWorld(int world)
+{
+	DEBUG_FUNC_CLASS();
+	SetPlayerVirtualWorld(this->EntityID, world);
+}
+
+int CPlayer::GetWorld()
+{
+	DEBUG_FUNC_CLASS();
+	return GetPlayerVirtualWorld(this->EntityID);
 }
 
 

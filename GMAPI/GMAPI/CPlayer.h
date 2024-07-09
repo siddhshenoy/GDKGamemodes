@@ -30,5 +30,15 @@ public:
 	virtual void SetHealth(float fHealth) override;
 	virtual float GetHealth() override;
 
+
+	// Inherited via CEntity
+	virtual void SetInterior(int interior) override;
+
+	virtual int GetInterior() override;
+
+	virtual void SetWorld(int world) override;
+
+	virtual int GetWorld() override;
+
 };
 

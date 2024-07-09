@@ -32,5 +32,10 @@ public:
 	virtual int			GetModel()	= 0;
 	virtual std::string GetName() = 0;
 
+	virtual void SetInterior(int interior) = 0;
+	virtual int GetInterior() = 0;
+	virtual void SetWorld(int world) = 0;
+	virtual int GetWorld() = 0;
+
 };
 
